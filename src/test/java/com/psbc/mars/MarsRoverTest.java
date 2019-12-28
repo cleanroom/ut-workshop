@@ -25,8 +25,8 @@ public class MarsRoverTest {
 		rover.move(1);
 		rover.turn("L");
 		rover.move(3);
-		String space = rover.toString();
-		System.out.println(space);
+		String space = rover.getSpace();
+		System.out.println(space); 
 		assertThat(space).isEqualTo("410N");
 	}
 	

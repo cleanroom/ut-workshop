@@ -39,7 +39,11 @@ public class FizzBuzzTest {
 				new Object[][] { 
 					{ 3, FizzBuzz.FIZZ } ,
 					{ 5, FizzBuzz.BUZZ } ,
-					{ 15, FizzBuzz.FIZZ_BUZZ } 
+					{ 7, FizzBuzz.WHIZZ } ,
+					{ 3*5, FizzBuzz.FIZZ_BUZZ } , 
+					{ 3*7, FizzBuzz.FIZZ_WHIZZ } ,
+					{ 3*5*7, FizzBuzz.FIZZ_BUZZ_WHIZZ } ,
+					{ 5*7, FizzBuzz.BUZZ_WHIZZ } ,
 				});
 	}
 

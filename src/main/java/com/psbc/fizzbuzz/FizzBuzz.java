@@ -1,5 +1,7 @@
 package com.psbc.fizzbuzz;
 
+import java.lang.reflect.WildcardType;
+
 /**
  * 测试
  * 
@@ -13,8 +15,16 @@ public class FizzBuzz {
 	public static final String FIZZ = "Fizz";
 	/** 被5整除打印文字 */
 	public static final String BUZZ = "Buzz";
+	/** 被7整除打印文字 */
+	public static final String WHIZZ = "Whizz";
 	/** 被15整除打印文字 */
 	public static final String FIZZ_BUZZ = "FizzBuzz";
+	/** 被21整除打印文字 */
+	public static final String FIZZ_WHIZZ = "FizzWhizz";
+	/** 被35整除打印文字 */
+	public static final String BUZZ_WHIZZ = "BuzzWhizz";
+	/** 被105整除打印文字 */
+	public static final String FIZZ_BUZZ_WHIZZ = "FizzBuzzWhizz";
 	/** 空格 */
 	public static final char BLANK = ' ';
 
@@ -63,17 +73,40 @@ public class FizzBuzz {
 	 * @return String
 	 */
 	public String game(int num) {
+		if(num <= 0) {
+			throw new RuntimeException("invalid input");
+		}
+		
 		boolean remainder3 = (num % 3) == 0;
 		boolean remainder5 = (num % 5) == 0;
+		boolean remainder7 = (num % 7) == 0;
+		
 		if (remainder3) {
 			if (remainder5) {
+				if(remainder7) {
+					return FIZZ_BUZZ_WHIZZ;
+				}
 				return FIZZ_BUZZ;
 			}
+			
+			if(remainder7) {
+				return FIZZ_WHIZZ;
+			}
+			
 			return FIZZ;
 		}
 
+		
 		if (remainder5) {
+			if(remainder7) {
+				return BUZZ_WHIZZ;
+			}
 			return BUZZ;
+		}
+		
+		
+		if(remainder7) {
+			return WHIZZ;
 		}
 
 		return null;

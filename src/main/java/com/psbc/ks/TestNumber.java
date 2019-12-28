@@ -1,26 +1,40 @@
 package com.psbc.ks;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import static java.lang.String.valueOf;
-
 public class TestNumber {
+	
+	private final static String _FIZZ_ = "Fizz";
+	private final static String _BUZZ_ = "Buzz";
+	private final static String _WHIZZ__= "Whizz";
+	private final static String _INVALID__= "Invalid input";
 
-  public String calc(int number) {
-    if (isDivide(number, 3) && isDivide(number, 5)) {
-      return "fizzbuzz";
-    }
-    if (isDivide(number, 3)) {
-      return "fizz";
-    }
-    if (isDivide(number, 5)) {
-      return "buzz";
-    }
-    return valueOf(number);
-  }
+	public String calc(int number) {
+		StringBuffer sb = new StringBuffer();
+		
+		if ( number <= 0  ) {
+			sb.append( _INVALID__);
+			return sb.toString();
+		}
+		
+		if (isDivide(number, 3)) {
+			sb.append(_FIZZ_);
+		}
+		
+		if (isDivide(number, 5)) {
+			sb.append(_BUZZ_);
+		}
+		
+		if (isDivide(number, 7)) {
+			sb.append(_WHIZZ__);
+		}
+		
+		if ( sb.length() == 0 ) {
+			sb.append(number);
+		}
+		
+		return sb.toString();
+	}
 
-  private boolean isDivide(int number, int i) {
-    return number % i == 0;
-  }
+	private boolean isDivide(int number, int i) {
+		return number % i == 0;
+	}
 }

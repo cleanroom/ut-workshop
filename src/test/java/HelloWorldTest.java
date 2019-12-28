@@ -38,18 +38,23 @@ public class HelloWorldTest {
     	testNumber = new TestNumber();
     	userCase = new HashMap<Integer, String>();
 
+    	userCase.put(0, "Invalid input");  
     	userCase.put(1, "1");  
     	userCase.put(2, "2"); 
-    	userCase.put(3, "fizz"); 
+    	userCase.put(3, "Fizz"); 
     	userCase.put(4, "4"); 
-    	userCase.put(5, "buzz"); 
-    	userCase.put(15, "fizzbuzz"); 
+    	userCase.put(5, "Buzz"); 
+    	userCase.put(15, "FizzBuzz"); 
+    	userCase.put(21, "FizzWhizz"); 
+    	userCase.put(35, "BuzzWhizz"); 
+    	userCase.put(105, "FizzBuzzWhizz"); 
     }
     
     @Test
     public void mytest() {
 
     	for ( Integer key : userCase.keySet() ) {
+    		System.out.print(testNumber.calc( key ) + "\n");
     		//验证是否成功
     		assertThat( testNumber.calc( key ) ).isEqualTo( userCase.get(key) );
     	}

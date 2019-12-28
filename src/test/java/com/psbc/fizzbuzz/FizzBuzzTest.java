@@ -68,8 +68,9 @@ public class FizzBuzzTest {
     @Test
     public void testShouldReturnBuzzWhizz(){
         assertEquals("BuzzWhizz", fizzBuzz.of(35));
-    } 
-
+    }
+    
+    @Test
     public void testShouldReturnFizzBuzzWhizz(){
         assertEquals("FizzBuzzWhizz", fizzBuzz.of(105));
     }

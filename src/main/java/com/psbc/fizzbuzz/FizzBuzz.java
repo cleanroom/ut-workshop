@@ -57,6 +57,10 @@ public class FizzBuzz {
             return FIZZ_BUZZ;
         }
 
+        if (((num % 3) == 0) && ((num % 7) == 0)) {
+            return FIZZ_WHIZZ;
+        }
+
         if ((num % 3) == 0) {
             return FIZZ;
         }

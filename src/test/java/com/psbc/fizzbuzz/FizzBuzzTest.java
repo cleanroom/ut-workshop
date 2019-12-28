@@ -19,7 +19,7 @@ public class FizzBuzzTest {
     public void init(){
         fizzBuzz = new FizzBuzz();
     }
-
+ 
     @Test
     public void testError(){
        String result =  fizzBuzz.fizzBuzz(3);

@@ -1,9 +1,15 @@
+import static org.fest.assertions.api.Assertions.assertThat;
+import static org.mockito.Mockito.mock;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.fest.assertions.api.Assertions.assertThat;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.when;
+import com.psbc.ks.TestNumber;
 
 
 public class HelloWorldTest {
@@ -24,18 +30,28 @@ public class HelloWorldTest {
     }
     
     
-    private Dependency mydep;
+    private TestNumber testNumber;
+    private Map<Integer,String> userCase;
     
     @Before
     public void init () {
-    	mydep = new Dependency();
-    	
+    	testNumber = new TestNumber();
+    	userCase = new HashMap<Integer, String>();
+
+    	userCase.put(1, "1");  
+    	userCase.put(2, "2"); 
+    	userCase.put(3, "fizz"); 
+    	userCase.put(4, "4"); 
+    	userCase.put(5, "buzz"); 
+    	userCase.put(15, "fizzbuzz"); 
     }
     
     @Test
     public void mytest() {
-        HelloWorld helloWorld = new HelloWorld(mydep);
 
-        assertThat(helloWorld.beenCalled()).isEqualTo("Hello World");
+    	for ( Integer key : userCase.keySet() ) {
+    		//验证是否成功
+    		assertThat( testNumber.calc( key ) ).isEqualTo( userCase.get(key) );
+    	}
     }
 }

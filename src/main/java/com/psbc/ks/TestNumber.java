@@ -3,31 +3,24 @@ package com.psbc.ks;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Test {
-	
-	
-	public int _maxNumber;
-	public int _minNumber;
-	
-	public Test () {
-		_maxNumber = 100;
-		_minNumber = 0;
-	}
+import static java.lang.String.valueOf;
 
-	public Test ( int _maxNum,  int _minNum ) {
-		
-		if ( _minNum > _maxNum ) {
-			this._maxNumber = _maxNum;
-			this._minNumber = _minNum;
-		}
-		
-		this._maxNumber = _maxNum;
-		this._minNumber = _minNum;
-	}
-	
-	public List<Integer> getBzxx () {
-		List <Integer> ret = new ArrayList<Integer>();
-		return ret;
-	}
+public class TestNumber {
 
+  public String calc(int number) {
+    if (isDivide(number, 3) && isDivide(number, 5)) {
+      return "fizzbuzz";
+    }
+    if (isDivide(number, 3)) {
+      return "fizz";
+    }
+    if (isDivide(number, 5)) {
+      return "buzz";
+    }
+    return valueOf(number);
+  }
+
+  private boolean isDivide(int number, int i) {
+    return number % i == 0;
+  }
 }

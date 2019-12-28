@@ -54,7 +54,7 @@ public class FizzBuzzTest {
         expectedException.expectMessage("Invalid input");
          fizzBuzz.of(0);
     }
-  
+
     @Test
     public void testShouldReturnWhizz(){
         assertEquals("Whizz", fizzBuzz.of(14));

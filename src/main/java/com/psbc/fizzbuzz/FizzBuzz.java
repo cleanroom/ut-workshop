@@ -64,6 +64,9 @@ public class FizzBuzz {
             return BUZZ;
         }
 
+        if ((num % 7) == 0) {
+            return WHIZZ;
+        }
         return String.valueOf(num);
     }
 

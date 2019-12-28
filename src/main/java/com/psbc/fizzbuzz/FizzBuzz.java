@@ -1,9 +1,5 @@
 package com.psbc.fizzbuzz;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.TreeMap;
-
 public class FizzBuzz {
 
     /**
@@ -12,7 +8,7 @@ public class FizzBuzz {
     private static final String FIZZ_BUZZ = "FizzBuzz";
 
     /**
-     * Fizz
+     * Fizz  
      */
     private static final String FIZZ = "Fizz";
 

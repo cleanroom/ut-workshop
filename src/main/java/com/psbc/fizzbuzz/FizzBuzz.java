@@ -8,7 +8,7 @@ public class FizzBuzz {
     private static final String FIZZ_BUZZ = "FizzBuzz";
 
     /**
-     * Fizz  
+     * Fizz
      */
     private static final String FIZZ = "Fizz";
 

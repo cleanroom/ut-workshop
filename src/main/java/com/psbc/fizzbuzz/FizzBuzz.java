@@ -6,33 +6,40 @@ import java.util.TreeMap;
 
 public class FizzBuzz {
 
-    /** FizzBuzz */
+    /**
+     * FizzBuzz
+     */
     private static final String FIZZ_BUZZ = "FizzBuzz";
 
-    /** Fizz */
+    /**
+     * Fizz
+     */
     private static final String FIZZ = "Fizz";
 
-    /** Buzz */
+    /**
+     * Buzz
+     */
     private static final String BUZZ = "Buzz";
 
 
+    /**
+     * 判断是否是 Fizz, Buzz, FizzBuzz
+     * @param num
+     * @return
+     */
     public String of(int num) {
-        Map<Integer, String> tmpMap = new TreeMap<>();
 
-        for (int i = 1; i <= 100; i++) {
-            if (((i % 3) == 0) && ((i % 5) == 0)) {
-                tmpMap.put(i, FIZZ_BUZZ);
-            } else if ((i % 3) == 0) {
-                tmpMap.put(i, FIZZ);
-            } else if ((i % 5) == 0) {
-                tmpMap.put(i, BUZZ);
-            } else {
-                tmpMap.put(i, String.valueOf(i));
-            }
+        if (((num % 3) == 0) && ((num % 5) == 0)) {
+            return FIZZ_BUZZ;
         }
+        if ((num % 3) == 0) {
+            return FIZZ;
+        }
+        if ((num % 5) == 0) {
+            return BUZZ;
+        }
+        return String.valueOf(num);
 
-        System.out.println(tmpMap.toString());
-        return tmpMap.get(num);
     }
 
 }

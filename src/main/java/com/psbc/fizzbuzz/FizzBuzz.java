@@ -16,7 +16,7 @@ public class FizzBuzz {
     private static final String BUZZ = "Buzz";
 
 
-    public String fizzBuzz(int num) {
+    public String of(int num) {
         Map<Integer, String> tmpMap = new TreeMap<>();
 
         for (int i = 1; i <= 100; i++) {

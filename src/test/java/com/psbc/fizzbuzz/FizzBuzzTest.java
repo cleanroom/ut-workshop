@@ -19,11 +19,25 @@ public class FizzBuzzTest {
     public void init(){
         fizzBuzz = new FizzBuzz();
     }
- 
+
     @Test
-    public void testError(){
-       String result =  fizzBuzz.fizzBuzz(3);
-        assertEquals("应该返回Fizz",  String.valueOf(3), "Fizz");
+    public void testShouldReturnFizz(){
+        assertEquals("Fizz", fizzBuzz.of(3));
+    }
+
+    @Test
+    public void testShouldReturnBuzz(){
+        assertEquals("Buzz", fizzBuzz.of(5));
+    }
+
+    @Test
+    public void testShouldReturnFizzBuzz(){
+        assertEquals("FizzBuzz", fizzBuzz.of(15));
+    }
+
+    @Test
+    public void testShouldReturnNumber(){
+        assertEquals("8", fizzBuzz.of(8));
     }
 
 }
